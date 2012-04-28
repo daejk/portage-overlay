@@ -1,0 +1,21 @@
+--- src/disper.py	2012-04-16 11:16:46.213176170 +0200
++++ src/disper.py	2012-04-16 11:17:40.533175089 +0200
+@@ -51,7 +51,6 @@
+         self._options_init()
+         self.plugins = Plugins(self)
+         #self.plugins.call('init') # can't really do here since list of plugins isn't read yet
+-        self.switcher = Switcher()
+         # add default options
+         # TODO do initial parsing too so errors can be traced to config
+         conffile = os.path.join(os.getenv('HOME'), '.disper', 'config') 
+@@ -181,6 +180,10 @@
+             # show help if no action specified
+             self.parser.print_help()
+             raise SystemExit(2)
++
++        # delay backend init to this point, so help can be printed even if no backends are available
++        self.switcher = Switcher()
++
+         if 'single' in self.options.actions:
+             if self.options.displays != 'auto':
+                 self.log.warning('specified displays ignored for single')
