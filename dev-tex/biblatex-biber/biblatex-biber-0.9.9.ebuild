@@ -21,6 +21,7 @@ DEPEND="virtual/perl-Module-Build
 	>=dev-perl/ExtUtils-LibBuilder-0.02
 	test? ( >=dev-perl/Test-Pod-1.22
 	>=dev-perl/Test-Pod-Coverage-1.08 )"
+
 RDEPEND="dev-perl/config-general
 	dev-perl/Data-Dump
 	dev-perl/Data-Compare
@@ -37,7 +38,7 @@ RDEPEND="dev-perl/config-general
 	dev-perl/XML-LibXSLT
 	>=dev-perl/Text-BibTeX-0.55
 	dev-perl/libwww-perl
-	=dev-tex/biblatex-1.6*"
+	dev-tex/biblatex"
 
 S="${WORKDIR}/${PN}-v${PV}"
 
