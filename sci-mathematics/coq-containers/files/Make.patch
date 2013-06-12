@@ -1,0 +1,24 @@
+--- /tmp/Containers/Make	2013-01-10 12:55:45.000000000 +0100
++++ Containers/Make	2013-06-12 11:40:47.616168912 +0200
+@@ -3,14 +3,6 @@
+ -custom "
+ #the following is inserted verbatim
+ 
+-install-plugin:
+-	install -d $(COQLIB)/user-contrib/Containers/Plugin/
+-	install -t $(COQLIB)/user-contrib/Containers/Plugin/ $(CONTAINERS_PLUGIN) $(CONTAINERS_PLUGINOPT)
+-
+-install: install-plugin
+-
+-test: $(TESTVOFILES) 
+-
+ $(TESTVOFILES): $(VOFILES)
+ 
+ clean-test: 
+@@ -60,4 +52,4 @@
+ theories/Generate.v
+ theories/SetConstructs.v
+ TESTVFILES = "tests/BenchMarks.v tests/TestSet.v tests/TestMap.v"
+-TESTVOFILES = "$(TESTVFILES:.v=.vo)"
+\ No newline at end of file
++TESTVOFILES = "$(TESTVFILES:.v=.vo)"
