@@ -21,7 +21,7 @@ RDEPEND="${DEPEND}"
 PYTHON_DEPEND="2"
 RESTRICT_PYTHON_ABIS="3.*"
 
-S="${WORKDIR}/dispercur"
+S="${WORKDIR}/disper"
 
 src_prepare() {
     python_convert_shebangs -r 2 .
