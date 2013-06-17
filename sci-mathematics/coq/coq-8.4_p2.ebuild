@@ -16,7 +16,7 @@ SRC_URI="http://${PN}.inria.fr/V${MY_PV}/files/${MY_P}.tar.gz"
 LICENSE="LGPL-2.1"
 SLOT="0"
 KEYWORDS="amd64 ~ppc ~x86"
-IUSE="gtk debug +ocamlopt doc camlp5"
+IUSE="gtk debug +ocamlopt doc camlp5 mtac"
 
 RDEPEND=">=dev-lang/ocaml-3.11.2[ocamlopt?]
 	camlp5? ( >=dev-ml/camlp5-6.02.3[ocamlopt?] )
@@ -35,7 +35,7 @@ DEPEND="${RDEPEND}
 S=${WORKDIR}/${MY_P}
 
 src_prepare() {
-	epatch "${FILESDIR}"/mtac-1.0.patch
+	use mtac && epatch "${FILESDIR}"/mtac-1.0.patch
 	epatch "${FILESDIR}"/coqlib.patch
 }
 
